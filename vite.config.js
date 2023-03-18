@@ -7,4 +7,5 @@ export default {
     https: 'true',
   },
   plugins: [mkcert()],
+
 };
