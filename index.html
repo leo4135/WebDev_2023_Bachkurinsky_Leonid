@@ -3,149 +3,49 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Homework</title>
+    <title>Homework_Card</title>
     <link href="/style.css" rel="stylesheet">
     <link rel="stylesheet" href='./public/reset.css'>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="icon" type="image/x-icon" href="/public/favicon-32x32.png">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@700&family=Montserrat:wght@500;700&display=swap" rel="stylesheet">
 </head>
 <body>
-<header
-        style="
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        flex-wrap: wrap;
-        gap: 20px;
-        max-width: 1400px;
-        margin: 0 auto;
-      "
->
-    <h1>Эта</h1>
-    <h2>Страница</h2>
-    <h3>Абсолютно</h3>
-    <h4>Адаптивна</h4>
-    <h5>С помощью</h5>
-    <h6>Флексбокса</h6>
-</header>
+
 <section>
-    <div
-            class="wrapper"
-            style="
-          max-width: 1400px;
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          gap: 20px;
-        "
-    >
-        <div class="modalWindow" style="display: none">
-            Спасибо, что нажали на меня, щелкните в любое место, чтобы закрыть
-        </div>
-        <p style="text-align: center">
-            <span class="section_p_span"></span> была вставлена в текст при помощи javascript'a.
-        </p>
-        <ol>
-            <li>Слово</li>
-            <li>Слово</li>
-            <li>Слово</li>
-            <li>Слово</li>
-        </ol>
-        <ul>
-            <li>Слово</li>
-            <li>Слово</li>
-            <li>Слово</li>
-            <li>Слово</li>
-        </ul>
-        <form style="margin: 20px 0; display: flex; flex-direction: column; gap: 15px">
-            <input type="text" placeholder="Текст" />
-            <input type="email" placeholder="E-mail" />
-            <input type="password" placeholder="Пароль" />
-            <input type="date" />
-            <div>
-                <label for="form_chechbox">Чекбокс</label>
-                <input id="form_chechbox" type="checkbox" placeholder="Чекбокс" />
-            </div>
-            <div>
-                <label for="form_chechbox">Радио кнопка</label>
-                <input id="form_chechbox" type="radio" placeholder="Чекбокс" />
-            </div>
-        </form>
-        <button onclick="clickMeNow()">Нажми на меня(Модалка)</button>
-        <button onclick="alert('вы нажали на кнопку')">Нажми на меня(Алерт)</button>
-        <table style="border: 1px solid grey">
-            <tr style="border: 1px solid grey">
-                <th colspan="2" style="border: 1px solid grey">Столбец 1</th>
-                <th style="border: 1px solid grey">Столбец 2</th>
-            </tr>
-            <tr style="border: 1px solid grey">
-                <td style="border: 1px solid grey">Информация</td>
-                <td style="border: 1px solid grey">Информация</td>
-                <td style="border: 1px solid grey">Информация</td>
-            </tr>
-            <tr style="border: 1px solid grey">
-                <td style="border: 1px solid grey">Информация</td>
-                <td style="border: 1px solid grey">Информация</td>
-                <td style="border: 1px solid grey">Информация</td>
-            </tr>
-            <tr style="border: 1px solid grey">
-                <td style="border: 1px solid grey">Информация</td>
-                <td style="border: 1px solid grey">Информация</td>
-                <td style="border: 1px solid grey">Информация</td>
-            </tr>
-            <tr style="border: 1px solid grey">
-                <td style="border: 1px solid grey">Информация</td>
-                <td style="border: 1px solid grey">Информация</td>
-                <td style="border: 1px solid grey">Информация</td>
-            </tr>
-        </table>
-        <div>
-            <h1>Тут select</h1>
-            <select>
-                <option><h1>Выберите вариант</h1></option>
-                <option>Вариант 1</option>
-                <option>Вариант 2</option>
-                <option>Вариант 3</option>
-                <option>Вариант 4</option>
-                <option>Вариант 5</option>
-            </select>
-        </div>
-    </div>
-</section>
-<footer     style ="
-                display: flex;
-                justify-content: space-around;
-                margin-top: 50px; ">
-    <img
-            style="max-width: 45%"
-            src="https://gas-kvas.com/uploads/posts/2023-02/1675495562_gas-kvas-com-p-luchshie-kartinki-dlya-fonovogo-risunka-ra-18.jpg"
-    />
-    <svg width="45%" viewBox="0 0 100 100">
-        <circle cx="50" cy="50" r="50">
-    </svg>
-</footer>
-
 <div class='wrapper'>
-    <div class="card">
-        <img src="./public/img.png" alt="Denim Jeans" style="width:100%">
-        <div class='card_text'>
-        <h1>Tailored Jeans</h1>
-        <p class="price">$19.99</p>
-        <p>Some text about the jeans..</p>
-        <p style='width: 100%'><button class='some_Button'>Add to Cart</button></p>
-        </div>
+  <div class='card'>
+     <img srcset='/public/image-product-mobile.jpg 600w,
+     /public/image-product-desktop.jpg'/>
+    <div class='content'>
+      <p class='card_uppercase'>perfume</p>
+      <h1>Gabrielle Essense Eau De Parfum</h1>
+      <p>A floral, solar and voluptuous interpretation composed by Olivier Polge, Perfumer-Creator for the House of CHANEL</p>
+      <div class='card_price'>
+      <h1>$149.99</h1><span>$169.99</span>
+      </div>
+      <button><img src='public/icon-cart.svg'/> <p>Add to Cart</p>
+        <div class='custom_cursor'></div>
+      </button>
     </div>
+  </div>
 </div>
-</body>
+</section>
 <script>
-  let someText = document.querySelector('.section_p_span');
-  someText.innerHTML = '<b><em><ins>Эта фраза</ins></em></b>';
+  let followCursor = document.querySelector(".custom_cursor");
 
-  function clickMeNow() {
-    let selectorModalWindow = document.querySelector('.modalWindow');
-    selectorModalWindow.style =
-      'display:flex; justify-content: center; align-items: center; background: #eee; position: fixed; top:0; width: 100vw; height: 100vh; z-index:100; ';
-    selectorModalWindow.addEventListener('click', () => {
-      selectorModalWindow.style = 'display:none;';
-    });
-  }
+  window.addEventListener("mousemove", e => {
+    followCursor.style.left = e.pageX + "px"
+    followCursor.style.top = e.pageY + "px"
+    const target = e.target
+    if (target.closest("button")) {
+      followCursor.classList.add("custom_cursor_button")
+    } else {
+      followCursor.classList.remove("custom_cursor_button")
+    }
+  })
 </script>
+</body>
+
 </html>
