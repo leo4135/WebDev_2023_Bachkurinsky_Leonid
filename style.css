@@ -1,0 +1,31 @@
+.wrapper {
+    max-width: 1400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.card {
+    max-width: 144px;
+    margin: 50px;
+}
+
+.card_text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+    background: darkgoldenrod;
+}
+.some_Button {
+   background-color: black;
+    color: #fff;
+    width: 100%;
+}
+
+.some_Button:hover {
+    background-color: #444;
+}
+
