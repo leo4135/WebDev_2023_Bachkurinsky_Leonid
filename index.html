@@ -1,137 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Homework</title>
-</head>
-<body>
-<header
-        style="
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        flex-wrap: wrap;
-        gap: 20px;
-        max-width: 1400px;
-        margin: 0 auto;
-      "
->
-    <h1>Эта</h1>
-    <h2>Страница</h2>
-    <h3>Абсолютно</h3>
-    <h4>Адаптивна</h4>
-    <h5>С помощью</h5>
-    <h6>Флексбокса</h6>
-</header>
-<section>
-    <div
-            class="wrapper"
-            style="
-          max-width: 1400px;
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          gap: 20px;
-        "
-    >
-        <div class="modalWindow" style="display: none">
-            Спасибо, что нажали на меня, щелкните в любое место, чтобы закрыть
-        </div>
-        <p style="text-align: center">
-            <span class="section_p_span"></span> была вставлена в текст при помощи javascript'a.
-        </p>
-        <ol>
-            <li>Слово</li>
-            <li>Слово</li>
-            <li>Слово</li>
-            <li>Слово</li>
-        </ol>
-        <ul>
-            <li>Слово</li>
-            <li>Слово</li>
-            <li>Слово</li>
-            <li>Слово</li>
-        </ul>
-        <form style="margin: 20px 0; display: flex; flex-direction: column; gap: 15px">
-            <input type="text" placeholder="Текст" />
-            <input type="email" placeholder="E-mail" />
-            <input type="password" placeholder="Пароль" />
-            <input type="date" />
-            <div>
-                <label for="form_chechbox">Чекбокс</label>
-                <input id="form_chechbox" type="checkbox" placeholder="Чекбокс" />
-            </div>
-            <div>
-                <label for="form_chechbox">Радио кнопка</label>
-                <input id="form_chechbox" type="radio" placeholder="Чекбокс" />
-            </div>
-        </form>
-        <button onclick="clickMeNow()">Нажми на меня(Модалка)</button>
-        <button onclick="alert('вы нажали на кнопку')">Нажми на меня(Алерт)</button>
-        <table style="border: 1px solid grey">
-            <tr style="border: 1px solid grey">
-                <th colspan="2" style="border: 1px solid grey">Столбец 1</th>
-                <th style="border: 1px solid grey">Столбец 2</th>
-            </tr>
-            <tr style="border: 1px solid grey">
-                <td style="border: 1px solid grey">Информация</td>
-                <td style="border: 1px solid grey">Информация</td>
-                <td style="border: 1px solid grey">Информация</td>
-            </tr>
-            <tr style="border: 1px solid grey">
-                <td style="border: 1px solid grey">Информация</td>
-                <td style="border: 1px solid grey">Информация</td>
-                <td style="border: 1px solid grey">Информация</td>
-            </tr>
-            <tr style="border: 1px solid grey">
-                <td style="border: 1px solid grey">Информация</td>
-                <td style="border: 1px solid grey">Информация</td>
-                <td style="border: 1px solid grey">Информация</td>
-            </tr>
-            <tr style="border: 1px solid grey">
-                <td style="border: 1px solid grey">Информация</td>
-                <td style="border: 1px solid grey">Информация</td>
-                <td style="border: 1px solid grey">Информация</td>
-            </tr>
-        </table>
-        <div>
-            <h1>Тут select</h1>
-            <select>
-                <option><h1>Выберите вариант</h1></option>
-                <option>Вариант 1</option>
-                <option>Вариант 2</option>
-                <option>Вариант 3</option>
-                <option>Вариант 4</option>
-                <option>Вариант 5</option>
-            </select>
-        </div>
-    </div>
-</section>
-<footer     style ="
-                display: flex;
-                justify-content: space-around;
-                margin-top: 50px; ">
-    <img
-            style="max-width: 45%"
-            src="https://gas-kvas.com/uploads/posts/2023-02/1675495562_gas-kvas-com-p-luchshie-kartinki-dlya-fonovogo-risunka-ra-18.jpg"
-    />
-    <svg width="45%" viewBox="0 0 100 100">
-        <circle cx="50" cy="50" r="50">
-    </svg>
-</footer>
-</body>
-<script>
-  let someText = document.querySelector('.section_p_span');
-  someText.innerHTML = '<b><em><ins>Эта фраза</ins></em></b>';
-
-  function clickMeNow() {
-    let selectorModalWindow = document.querySelector('.modalWindow');
-    selectorModalWindow.style =
-      'display:flex; justify-content: center; align-items: center; background: #eee; position: fixed; top:0; width: 100vw; height: 100vh; z-index:100; ';
-    selectorModalWindow.addEventListener('click', () => {
-      selectorModalWindow.style = 'display:none;';
-    });
-  }
-</script>
+    <title>Vite App</title>
+    <style>
+      @tailwind base;
+      @tailwind components;
+      @tailwind utilities;
+    </style>
+  </head>
+  <body>
+    <div class="" id="app"></div>
+    <script type="module" src="/main.js"></script>
+  </body>
 </html>
