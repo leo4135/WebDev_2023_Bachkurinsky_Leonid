@@ -48,16 +48,17 @@
                   id="countries"
                   class="bg-neutral-100 p-1.5 rounded w-full border-1 border-neutral-200 focus:border-none"
           >
-            <option selected>Choose a tag</option>
-            <option value="web">Web</option>
-            <option value="update">Update</option>
-            <option value="design">Design</option>
-            <option value="content">Content</option>
+            <option selected disabled>Choose a tag</option>
+            <option data-option="option" value="web">Web</option>
+            <option data-option="option" value="update">Update</option>
+            <option data-option="option" value="design">Design</option>
+            <option data-option="option" value="content">Content</option>
           </select>
         </div>
       </div>
+      <div class="flex flex-row gap-2" data-id="selected-tags"></div>
       <div class="flex flex-row pt-2">
-        <button class="bg-teal-600 text-white p-2 rounded-lg w-full font-bold">Create</button>
+        <button class="bg-teal-600 text-white p-2 rounded-lg w-full font-bold" id="btnCreateTaskConfirm">Create</button>
       </div>
     </div>
   </div>
@@ -119,18 +120,18 @@
                 <span class="text-neutral-400 text-neutral-400">...</span>
               </div>
             </div>
-            <div class="flex flex-col gap-y-2">
-              <div class="flex flex-col bg-white p-3 rounded-2xl gap-y-1">
+            <div class="flex flex-col gap-y-2" id="TasksParentForInsert">
+              <div class="flex flex-col bg-white p-3 rounded-2xl gap-y-1" id="TemplateTask">
                 <div class="flex flex-row justify-between">
-                  <h1 class="font-bold">Layout design</h1>
+                  <h1 class="font-bold" data-id="setTitle">Layout design</h1>
                   <span class="text-neutral-400">...</span>
                 </div>
                 <div class="flex flex-row justify-between align-center">
-                  <div class="flex flex-row gap-x-2">
+                  <div class="flex flex-row gap-x-2" data-id="setTags">
                   <span class="p1 bg-neutral-100 rounded-1xl">Update</span>
                   <span class="p1 bg-neutral-100 rounded-1xl">Web</span>
                   </div>
-                  <span class="flex items-center">12 days left</span>
+                  <span class="flex items-center" data-id="setDate">12 days left</span>
                 </div>
 
                 <div class="flex flex-row">
