@@ -5,6 +5,10 @@ import DOM from './src/const/Dom.js';
 let DOM_SELECT_ID = (id) => document.getElementById(id);
 const DOM_SELECT_CLASS = (select) => document.querySelector(select);
 
+const rawTasks2 = localStorage.getItem('tasks');
+const testTasks2 = JSON.parse(rawTasks2);
+let tasks = testTasks2;
+
 class Clicker {
   constructor(isSelect, isToggle) {
     this.isSelect = isSelect;
@@ -24,8 +28,41 @@ let closeTask = new Clicker(
   DOM_SELECT_CLASS(DOM.button.IS_VISIBLE),
 );
 
-let tasks = [];
+function insertTasksFromLocal() {
+  const rawTasks = localStorage.getItem('tasks');
+  const testTasks = JSON.parse(rawTasks);
+  const createTaskWithClickOnButton = DOM_SELECT_ID('TemplateTask');
+  const insertTask = DOM_SELECT_ID('TasksParentForInsert');
 
+  testTasks.forEach((oneTask) => {
+    const taskView = createTaskWithClickOnButton.cloneNode(true);
+    let titleInject = taskView.querySelector(`[data-id="setTitle"]`);
+    let dataInject = taskView.querySelector(`[data-id="setDate"]`);
+    let tagsInject = taskView.querySelector(`[data-id="setTags"]`);
+    titleInject.innerText = oneTask.title;
+    dataInject.innerText = oneTask.date;
+    tagsInject.innerHTML = oneTask.tags;
+    insertTask.prepend(taskView);
+    taskView.onclick = () => {
+      let cloneModal = DOM_SELECT_CLASS(DOM.button.IS_VISIBLE).cloneNode(true);
+      let BODY = DOM_SELECT_CLASS('body');
+      const inpTitle = cloneModal.querySelector(`[data-id="text"]`);
+      const inpDate = cloneModal.querySelector(`[data-id="date"]`);
+      const inpTags = cloneModal.querySelector(`[data-id="selected-tags"]`);
+      inpTitle.value = oneTask.title;
+      inpDate.value = oneTask.date;
+      inpTags.innerHTML = oneTask.tags;
+
+      cloneModal.classList.toggle('hidden');
+      BODY.prepend(cloneModal);
+      let closeTask = new Clicker(
+        DOM_SELECT_CLASS(DOM.button.CLOSE_TASK),
+        DOM_SELECT_CLASS(DOM.button.IS_VISIBLE),
+      );
+    };
+  });
+}
+insertTasksFromLocal();
 const createTaskWithClickOnButton = DOM_SELECT_ID('TemplateTask');
 const insertTask = DOM_SELECT_ID('TasksParentForInsert');
 
@@ -48,6 +85,7 @@ function setValuesFromInput() {
   let currentTagList = document.querySelector(`[data-id="selected-tags"]`);
   select.onchange = (e) => {
     tagList.push('<span class="p1 bg-neutral-100 rounded-1xl">' + e.target.value + '</span>');
+    console.log(tagList);
     setTagList = Array.from(new Set(tagList));
     currentTagList.innerHTML = setTagList.join('');
 
@@ -89,8 +127,14 @@ function setValuesFromInput() {
     } else {
       alert('заполните хотя бы одно поле');
     }
-    tasks.push(taskView);
-
+    let jsonTask = {
+      title: inpTitleValue,
+      date: inpDateValue,
+      tags: setTagList,
+    };
+    tasks.push(jsonTask);
+    console.log('массив' + tasks);
+    localStorage.setItem('tasks', JSON.stringify(tasks));
     inpTitle.value = '';
     inpDate.value = '';
     currentTagList.innerHTML = '';
@@ -103,3 +147,16 @@ function setValuesFromInput() {
   };
 }
 setValuesFromInput();
+
+class newTaskForLocal {
+  constructor(title, date, tags) {
+    this.title = title;
+    this.date = date;
+    this.tags = tags;
+  }
+}
+
+const addTask = document.querySelector(`[data-id="add-task"]`);
+addTask.onclick = () => {
+  DOM_SELECT_CLASS(DOM.button.IS_VISIBLE).classList.toggle('hidden');
+};
